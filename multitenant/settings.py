@@ -25,7 +25,7 @@ SECRET_KEY = '0(t57!md2_a*865s7bsx=rzzj2#gupb6x8xj78@28_dd77jj2l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 
 # Application definition
@@ -50,6 +50,7 @@ TENANT_APPS = [
 ]
 
 INSTALLED_APPS = [
+    
     'tenant_schemas',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -62,7 +63,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'tenant_schemas.middleware.TenantMiddleware'
+    'tenant_schemas.middleware.TenantMiddleware',
+    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -150,3 +152,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 TENANT_MODEL="shared.Client"
+MEDIA_ROOT = '/data/media'
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'tenant_schemas.storage.TenantFileSystemStorage'

@@ -7,6 +7,11 @@ class Client(TenantMixin):
   created_on= models.DateField(auto_now_add=True)
   auto_create_schema=True #cada vez que cree un cliente cree esquema en bd
 
+  def __str__(self):
+    return self.name
+
 class Language(models.Model):
   code= models.CharField(max_length=5)
   name= models.CharField(max_length=5)
+  def __str__(self):
+    return self.name

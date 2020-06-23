@@ -25,7 +25,7 @@ SECRET_KEY = '0(t57!md2_a*865s7bsx=rzzj2#gupb6x8xj78@28_dd77jj2l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,13 +40,15 @@ SHARED_APPS = [ #aplicacion compartida por clientes
 ]
 
 TENANT_APPS = [
-    'store',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'store',
+    'client2',
 ]
 
 INSTALLED_APPS = [
@@ -60,6 +62,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shared',
     'store',
+    'client2',
 ]
 
 MIDDLEWARE = [
